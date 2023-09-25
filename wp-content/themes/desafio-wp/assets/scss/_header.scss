@@ -1,0 +1,47 @@
+header{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: rgba($color_bg, 0.85);
+	z-index: 9999;
+	.top-site{
+		height: 92px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		ul{
+			display: flex;
+			align-items: center;
+			margin-right: -25px;
+			a{
+				padding: 25px;
+				display: inline-block;
+				letter-spacing: 0.57px;
+				font-size: rem(19);
+				transition: color 0.3s;
+				&:hover, &.active{
+					color: $red;
+				}
+			}
+		}
+	}
+
+	@media(max-width: 991px){
+		.top-site{
+			justify-content: center;
+			height: 80px;
+			.logo{
+				img{
+					width: 72px;
+					height: auto;
+				}
+			}
+			nav{
+				display: none;
+			}
+		}
+	}
+}

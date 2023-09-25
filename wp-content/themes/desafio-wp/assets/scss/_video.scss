@@ -1,0 +1,159 @@
+#video-type{
+	padding: 125px 0 120px 0;
+	margin-top: 92px;
+	.grid{
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: 150px;
+		
+		.info{
+			@media(min-width: 992px){
+				.sticky{
+					position: sticky;
+					top: 200px;
+				}
+			}
+			.text{
+				p{
+					font-size: rem(18);
+					line-height: rem(35);
+					letter-spacing: 0.54px;
+				}
+			}
+		}
+
+		.grid-videos{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 80px 30px;
+		}
+
+	}
+
+	@media(max-width: 1500px){
+		padding-top: 100px;
+		.grid{
+			gap: 60px;
+			.info{
+				.text{
+					p{
+						font-size: rem(16);
+						line-height: rem(30);
+					}
+				}
+			}
+		}
+	}
+
+	@media(max-width: 991px){
+		margin-top: 0;
+		padding: 70px 0;
+		.grid{
+			grid-template-columns: 1fr;
+			gap: 0;
+			.info{
+				.text{
+					margin-bottom: 50px;
+					p{
+						font-size: rem(13);
+						line-height: rem(24);
+					}
+				}
+			}
+			.grid-videos{
+				grid-template-columns: 1fr 1fr;
+				gap: 50px 20px;
+			}
+		}
+	}
+}
+
+
+
+#single-video{
+	padding-top: 140px;
+	margin-top: 92px;
+	@media(max-width: 1500px){
+		padding-top: 80px;
+	}
+	@media(max-width: 991px){
+		margin-top: 20px;
+		padding-top: 20px;
+	}
+	.info{
+		margin-left: 260px;
+		max-width: 945px;
+		@media(max-width: 1500px){
+			margin-left: 100px;
+		}
+		&__tags{
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-bottom: 20px;
+		}
+		h1{
+			font-size: rem(70);
+			line-height: rem(100);
+			letter-spacing: -2.8px;
+			font-weight: 900;
+			margin-bottom: 50px;
+		}
+		&__text{
+			padding: 100px 0 140px 0;
+			p{
+				font-size: rem(18);
+				line-height: rem(35);
+				letter-spacing: 0.54px;
+				font-weight: 500;
+			}
+		}
+		@media(max-width: 991px){
+			margin-left: 0;
+			max-width: 100%;
+			h1{
+				font-size: rem(28);
+				line-height: rem(30);
+				margin-bottom: 40px;
+			}
+			&__text{
+				padding: 50px 0;
+				p{
+					font-size: rem(13);
+					line-height: rem(23);
+				}
+			}
+		}
+	}
+
+	.player{
+		width: 100%;
+		height: 920px;
+		background-size: cover;
+		background-position: center;
+		border-radius: 3px;
+		@extend %center;
+		svg{
+			fill: #fff;
+			transition: 0.2s;
+			@media(min-width: 992px){
+				&:hover{
+					transform: scale(1.1);
+				}
+			}
+		}
+		@media(max-width: 1500px){
+			height: 520px;
+		}
+		@media(max-width: 991px){
+			border-radius: 0;
+			height: 210px;
+			width: calc(100% + 60px);
+			margin-left: -30px;
+			svg{
+				width: 53px;
+				height: auto;
+			}
+		}
+	}
+}

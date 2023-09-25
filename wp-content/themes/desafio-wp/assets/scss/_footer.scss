@@ -1,0 +1,36 @@
+footer{
+	padding: 105px 0 180px 0;
+	background: $color_bg_secondary;
+	.logo{
+		margin-bottom: 33px;
+		display: inline-block;
+	}
+	.copy{
+		letter-spacing: 0.54px;
+		font-size: rem(18);
+		font-weight: 500;
+		a{
+			transition: 0.3s;
+			&:hover{
+				color: $red;
+			}
+		}
+	}
+	@media(max-width: 991px){
+		padding: 80px 0 200px 0;
+		.content{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.logo{
+				img{
+					width: 72px;
+					height: auto;
+				}
+			}
+			.copy{
+				font-size: rem(13);
+			}
+		}
+	}
+}

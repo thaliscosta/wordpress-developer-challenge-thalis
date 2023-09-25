@@ -1,0 +1,22 @@
+#error404{
+	padding: 220px 0;
+	h1{
+		font-size: rem(100);
+		font-weight: 700;
+		line-height: rem(100);
+	}
+	h2{
+		font-size: rem(20);
+		line-height: rem(30);
+	}
+	@media(max-width: 991px){
+		text-align: center;
+		h1{
+			font-size: rem(50);
+			line-height: rem(60);
+		}
+		h2{
+			font-size: rem(15);
+		}
+	}
+}

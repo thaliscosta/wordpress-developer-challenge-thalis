@@ -1,0 +1,162 @@
+#home{
+
+	.s-top{
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		&:before{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: #000000 no-repeat center center / cover;
+			opacity: 0.5;
+			content: '';
+		}
+
+		.info{
+			position: relative;
+			z-index: 99;
+			max-width: 700px;
+			padding-top: 140px;
+
+			&__tags{
+				display: flex;
+				gap: 10px;
+				margin-bottom: 40px;
+			}
+
+			h2{
+				font-size: rem(100);
+				line-height: rem(100);
+				font-weight: 900;
+				color: #ffff;
+				letter-spacing: -4px;
+				margin-bottom: 50px;
+			}
+
+			&__red-btn{
+				background: $red;
+				color: #fff;
+				font-size: rem(18);
+				letter-spacing: 0.54px;
+				font-weight: 400;
+				border-radius: 3px;
+				padding: 22px 76px;
+				transition: background 0.3s;
+				&:hover{
+					background: darken($red, 14%);
+				}
+			}
+
+			@media(max-width: 1500px){
+				padding-top: 70px;
+				h2{
+					font-size: rem(80);
+					line-height: rem(80);
+				}
+			}
+
+		}
+
+		@media(min-width: 992px){
+			background-attachment: fixed;
+		}
+
+		@media(max-width: 991px){
+			height: 100vh;
+			max-height: 550px;
+			.info{
+				padding-top: 0;
+				h2{
+					font-size: rem(40);
+					line-height: rem(40);
+					letter-spacing: -1.6px;
+				}
+				&__red-btn{
+					padding: 12px 65px;
+					font-size: rem(14);
+				}
+			}
+		}
+
+	}
+
+
+	.s-movies{
+		padding-top: 90px;
+		overflow-x: hidden;
+		&:last-child{
+			padding-bottom: 160px;
+		}
+
+		.swiper{
+			position: relative;
+			@media(max-width: 991px){
+				width: calc(100% + 30px);		
+			}
+			.arrows{
+				transition: opacity 0.3s;
+				opacity: 0;
+				top: 0;
+				position: absolute;
+				right: 0;
+				z-index: -1;
+				background: rgba(#000, 0.7);
+				width: 60px;
+				height: 387px;
+				@extend %center;
+				flex-direction: column;
+				gap: 20px;
+				@media(max-width: 1500px){
+					height: 320px;
+				}
+				@media(max-width: 991px){
+					display: none;
+				}
+				svg{
+					fill: #fff;
+					width: 25px;
+					height: auto;
+				}
+				button{
+					background: transparent;
+					&.swiper-button-disabled{
+						opacity: 0.5;
+						pointer-events: none;
+					}
+					&.prev{
+						transform: rotate(180deg);
+					}
+					svg{
+						transition: fill 0.2s;
+					}
+					&:hover{
+						svg{
+							fill: $red;
+						}
+					}
+				}
+			}
+			&:hover{
+				.arrows{
+					opacity: 1;
+					z-index: 999;
+				}
+			}
+		}
+
+		@media(max-width: 991px){
+			padding-top: 70px;
+			&:last-child{
+				padding-bottom: 120px;
+			}
+		}
+	}
+
+
+}
